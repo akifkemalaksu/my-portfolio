@@ -61,5 +61,7 @@ jobs:
               --name portfolio \
               --restart unless-stopped \
               -p 80:80 \
+              -p 443:443 \
+              -v /etc/ssl/akifkemalaksu:/etc/nginx/certs:ro \
               ghcr.io/${{ github.repository }}:latest
             docker image prune -f
